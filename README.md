@@ -19,22 +19,20 @@
 
 ## Utilização
 
-1. Atribuir Url
-      > $ vim /etc/hosts
-
-      **{IP_VAGRANT} {URL}**
-
-      * IP_VAGRANT : Ip atribuido a VM
-      * URL : Url que sera utilizada para acesso a VM
-
-
-2. Iniciar Vagrant API Otus 
+1. Iniciar Vagrant API Otus 
       > $ vagrant up
 
-3. Realizar Deploy API
-      > $ mvn -f otus-root/pom.xml clean install && mvn -f otus-ear/pom wildfly:deploy -Dwildfly-hostname={URL}
+2. Identificar IP 
+      > $ vagrant ssh
+      > $ ifconfig 
 
+3. Atribuir Url
+      > $ vim /etc/hosts
 
+      **{IP_VAGRANT} api-otus.localhost**
 
+      * IP_VAGRANT : Ip atribuido a VM
+      * api-otus.localhost : Url que sera utilizada para acesso a VM como padrão. Customizar caso necessário.
 
-
+4. Realizar Deploy API
+      > $ mvn -f otus-root/pom.xml clean install && mvn -f otus-ear/pom wildfly:deploy -Dwildfly-hostname=api-otus.localhost
