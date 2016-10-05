@@ -29,7 +29,7 @@ then
 	sed -i '/<host name="default-host" alias="localhost">/s/$/\n\t<filter-ref name=\"Access-Control-Allow-Credentials\"\/>/' /wildfly/standalone/configuration/standalone.xml
 
 	sed -i '/<filters>/s/$/\n\t<response-header name=\"Access-Control-Allow-Origin\" header-name=\"Access-Control-Allow-Origin\" header-value=\"\*\"\/>/' /wildfly/standalone/configuration/standalone.xml
-	sed -i '/<filters>/s/$/\n\t<response-header name=\"Access-Control-Allow-Methods\" header-name=\"Access-Control-Allow-Methods\" header-value=\"\*\"\/>/' /wildfly/standalone/configuration/standalone.xml
+	sed -i '/<filters>/s/$/\n\t<response-header name=\"Access-Control-Allow-Methods\" header-name=\"Access-Control-Allow-Methods\" header-value=\"\GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH\"\/>/' /wildfly/standalone/configuration/standalone.xml
 	sed -i '/<filters>/s/$/\n\t<response-header name=\"Access-Control-Allow-Headers\" header-name=\"Access-Control-Allow-Headers\" header-value=\"Content-Type, Authorization\"\/>/' /wildfly/standalone/configuration/standalone.xml
 	sed -i '/<filters>/s/$/\n\t<response-header name=\"Access-Control-Allow-Credentials\" header-name=\"Access-Control-Allow-Credentials\" header-value=\"true\"\/>/' /wildfly/standalone/configuration/standalone.xml
 
