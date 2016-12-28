@@ -23,7 +23,8 @@
       > $ vagrant up
 
 2. Identificar IP 
-      > $ vagrant ssh
+      > $ vagrant ssh 
+      
       > $ ifconfig 
 
 3. Atribuir Url
