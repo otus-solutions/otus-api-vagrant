@@ -9,7 +9,6 @@ then
      echo debconf shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
      echo debconf shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections
      sudo apt-get install --yes oracle-java8-installer
-     yes "" | apt-get -f install
 else
      echo "CHECK - Java already installed"
 fi
