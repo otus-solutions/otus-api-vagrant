@@ -17,7 +17,7 @@
 * Java
   > Versão : 8
 
-## Utilização
+## Construção
 
 1. Iniciar Vagrant API Otus 
       > $ vagrant up
@@ -37,3 +37,7 @@
 
 4. Realizar Deploy API
       > $ mvn -f otus-root/pom.xml clean install && mvn -f otus-ear/pom.xml wildfly:deploy -Dwildfly-hostname=api-otus.localhost
+
+## Utilizando BOX
+      > vagrant box add otus-api otus-api.box
+      > vagrant up
