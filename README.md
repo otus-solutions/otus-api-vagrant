@@ -17,27 +17,28 @@
 * Java
   > Versão : 8
 
-## Construção
+## Construção de box
+      > $ vagrant up
+      > $ vagrant package --output dist/otus-api.box
+      > $ vagrant box add otus-api dist/otus-api.box
+      > $ vagrant halt
 
-1. Iniciar Vagrant API Otus 
+## Executanto box
+      > $ cd dist/
       > $ vagrant up
 
-2. Identificar IP 
-      > $ vagrant ssh 
-      
-      > $ ifconfig 
+## Utilizando URL Customizada
+Considerando que a vm esta iniciada.
 
-3. Atribuir Url
+      > $ vagrant ssh
+      > $ ifconfig **Identificar ip da maquina**
+      > $ exit
       > $ vim /etc/hosts
-
-      **{IP_VAGRANT} api-otus.localhost**
+          {IP_VAGRANT} api-otus.localhost
 
       * IP_VAGRANT : Ip atribuido a VM
       * api-otus.localhost : Url que sera utilizada para acesso a VM como padrão. Customizar caso necessário.
 
-4. Realizar Deploy API
+## Realizar Deploy API
       > $ mvn -f otus-root/pom.xml clean install && mvn -f otus-ear/pom.xml wildfly:deploy -Dwildfly-hostname=api-otus.localhost
 
-## Utilizando BOX
-      > vagrant box add otus-api otus-api.box
-      > vagrant up
